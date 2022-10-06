@@ -10,5 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_06_151453) do
+  create_table "trips", force: :cascade do |t|
+    t.string "title"
+    t.integer "difficulty"
+    t.integer "length"
+    t.string "starting_city_name"
+    t.string "starting_city_zipcode"
+    t.string "starting_street_address"
+    t.string "ending_city_name"
+    t.string "ending_city_zipcode"
+    t.string "ending_street_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
