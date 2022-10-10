@@ -1,4 +1,13 @@
 <div class= "container mt-5">
     <h1> Bienvenue sur lanes ! </h1>
     <p> Lanes vous permet de trouver les meilleurs itinéraires de vélo autour de chez vous.</p>
+    <p> Il y a <%= @trips.count %> itinéraires disponibles </p>
+    <ol>
+        <% @trips.each do |trip| %>
+           <li> <%= link_to trip.title, trip_path(trip.id) %> </li>
+        <% end %>
+    </ol>
+    <div>
+        <%= link_to "Ajouter un itinéraire", new_trip_path %>
+    </div>
 </div>
