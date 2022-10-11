@@ -1,0 +1,12 @@
+<%= simple_form_for(trip) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :starting_city_name %>
+    <%= f.input :starting_city_zipcode %>
+    <%= f.input :starting_street_address %>
+    <%= f.input :ending_city_name %>
+    <%= f.input :ending_city_zipcode %>
+    <%= f.input :ending_street_address %>
+    <%= f.input :difficulty %>
+    <%= f.input :length %>
+    <%= f.submit %>
+<% end %>  

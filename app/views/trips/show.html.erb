@@ -1,6 +1,8 @@
 <div class= "container mt-5">
     <%= link_to "Retour", root_path %>
     <h1> Détail de l'itinéraire: <%= @trip.title %> </h1>
+    <%= link_to "Editer", edit_trip_path(@trip) %>
+    |
     <%= link_to "Supprimer", trip_path(@trip),
         data: { turbo_method: :delete, 
                 turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet itinéraire ?"  
