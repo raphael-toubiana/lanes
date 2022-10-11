@@ -1,0 +1,12 @@
+<% if trip.reviews.count > 0 %>
+    <% trip.reviews.each do |review| %>
+        <div class="card w-50 mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><%= review.rating %>/10</h5>
+                <p class="card-text"><%= review.content %></p>
+            </div>
+        </div>
+    <% end %>
+<% else %>
+    "Il n'y a pas encore d'avis pour cet itinérarire"
+<% end %>
