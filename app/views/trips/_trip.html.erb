@@ -1,0 +1,18 @@
+<div>
+    <h1> <%= trip.title %> </h1>
+    <p> <strong> Difficulté: </strong> <%= trip.difficulty%>/10 </p>
+    <p> <strong> Longueur: </strong> <%= trip.length%> minutes </p>
+    <p> <strong> Ville de départ: </strong> <%= trip.starting_city_name%></p>
+    <p> <strong> Code postal de la ville de départ: </strong> <%= trip.starting_city_zipcode%></p>
+    <p> <strong> Adresse du départ: </strong> <%= trip.starting_street_address%></p>
+    <p> <strong> Ville d'arrivée: </strong> <%= trip.ending_city_name%></p>
+    <p> <strong> Code postal de la ville d'arrivée: </strong> <%= trip.ending_city_zipcode%></p>
+    <p> <strong> Adresse d'arrivée: </strong> <%= trip.ending_street_address%></p>
+</div>
+<%= link_to "Editer", edit_trip_path(trip), class: "btn btn-secondary" %>
+<%= link_to "Supprimer", trip_path(trip),
+    data: { turbo_method: :delete, 
+            turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet itinéraire ?"  
+            } ,
+    class: "btn btn-danger"
+%>

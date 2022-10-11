@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
   root to: 'trips#index'
-  resources :trips, only: [:new, :create, :edit, :update, :destroy, :show]
+  resources :trips, only: [:new, :create, :edit, :update, :destroy, :show] do
+    collection do
+      get :hard
+      get :easy
+    end
+  end
 end

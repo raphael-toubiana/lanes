@@ -34,6 +34,14 @@ class TripsController < ApplicationController
         redirect_to root_path, status: :see_other
     end
 
+    def hard
+        @trips = Trip.where("difficulty > 5")
+    end
+
+    def easy
+        @trips = Trip.where("difficulty < 5")
+    end
+
     private
 
     def trip_params
