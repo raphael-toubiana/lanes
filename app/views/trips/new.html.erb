@@ -1,36 +1,14 @@
 <div class= "container mt-5">
     <h1> Ajoutez un nouvel itinéraire </h1>
-
-    <%= form_with model: @trip do |f| %>
-
-    <%= f.label :titre %>
-    <%= f.text_field :title %>
-
-    <%= f.label :ville_de_depart %>
-    <%= f.text_field :starting_city_name %>
-
-    <%= f.label :code_postal_de_la_ville_de_depart %>
-    <%= f.text_field :starting_city_zipcode %>
-
-    <%= f.label :adresse_du_lieu_du_depart %>
-    <%= f.text_field :starting_street_address %>
-
-    <%= f.label :ville_de_arrivée %>
-    <%= f.text_field :ending_city_name %>
-
-    <%= f.label :code_postal_de_la_ville_de_arrivée %>
-    <%= f.text_field :ending_city_zipcode %>
-
-    <%= f.label :adresse_du_lieu_de_arrivée %>
-    <%= f.text_field :ending_street_address %>
-
-    <%= f.label :difficulté %>
-    <%= f.number_field :difficulty %>
-
-    <%= f.label :durée %>
-    <%= f.number_field :length %>
-
-    <%= f.submit %>
-<% end %>
-    
+    <%= simple_form_for(@trip) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :starting_city_name %>
+        <%= f.input :starting_city_zipcode %>
+        <%= f.input :starting_street_address %>
+        <%= f.input :ending_city_name %>
+        <%= f.input :ending_city_zipcode %>
+        <%= f.input :ending_street_address %>
+        <%= f.input :difficulty %>
+        <%= f.input :length %>
+    <% end %>    
 </div>
