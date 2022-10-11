@@ -1,0 +1,5 @@
+<div class= "container mt-5">
+    <%= link_to "Revenir à l'itinéraire", trip_path(@review.trip), class: "link-secondary" %>
+    <h1> Modifiez cet avis </h1>
+    <%= render 'update_form', review: @review %>
+</div>

@@ -9,7 +9,7 @@
     <p> <strong> Code postal de la ville d'arrivée: </strong> <%= trip.ending_city_zipcode%></p>
     <p> <strong> Adresse d'arrivée: </strong> <%= trip.ending_street_address%></p>
 </div>
-<%= link_to "Editer", edit_trip_path(trip), class: "btn btn-secondary" %>
+<%= link_to "Modifier", edit_trip_path(trip), class: "btn btn-light" %>
 <%= link_to "Supprimer", trip_path(trip),
     data: { turbo_method: :delete, 
             turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet itinéraire ?"  

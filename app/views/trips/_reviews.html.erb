@@ -4,9 +4,10 @@
             <div class="card-body">
                 <h5 class="card-title"><%= review.rating %>/10</h5>
                 <p class="card-text"><%= review.content %></p>
+                <%=link_to "Modifier", edit_review_path(review), class: "btn btn-light"%>
             </div>
         </div>
     <% end %>
 <% else %>
-    "Il n'y a pas encore d'avis pour cet itinérarire"
+    <p> Il n'y a pas encore d'avis pour cet itinérarire </p>
 <% end %>
