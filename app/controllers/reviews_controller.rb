@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :set_trip, only: [:new, :create]
-    before_action :set_review, only: [:edit, :update]
+    before_action :set_review, only: [:edit, :update, :destroy]
 
     def new
         @review = Review.new
@@ -26,6 +26,12 @@ class ReviewsController < ApplicationController
         else
             render :edit, status: :unprocessable_entity
         end
+    end
+
+    def destroy
+        @review.destroy
+
+        redirect_to trip_path(@review.trip)
     end
 
     private

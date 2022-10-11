@@ -7,5 +7,5 @@ Rails.application.routes.draw do
       get :easy
     end
   end
-  resources :reviews, only: [:edit, :update]
+  resources :reviews, only: [:edit, :update, :destroy]
 end
