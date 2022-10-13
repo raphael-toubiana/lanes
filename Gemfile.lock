@@ -1,3 +1,5 @@
+bundle lock --add-platform x86_64-linux
+
 GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: 31fe25504771bd6cd425b585a4e0ed652fba4521
