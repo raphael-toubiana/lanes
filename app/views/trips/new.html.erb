@@ -1,4 +1,7 @@
 <div class= "container mt-5">
     <h1> Ajoutez un nouvel itinéraire </h1>
-    <%= render 'form', trip: @trip  %>
+    <%= link_to "Retour", root_path, class: "link-secondary" %>
+    <div class= "mt-4">
+     <%= render 'form', trip: @trip  %>
+    </div>
 </div>
