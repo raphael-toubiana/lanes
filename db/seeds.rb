@@ -8,6 +8,7 @@
 
 
 puts "Cleaning database..."
+Review.destroy_all
 Trip.destroy_all
 
 puts "Creating new trips..."
@@ -50,4 +51,40 @@ else
     puts "#{mountain_trip.title} failed to be created"
 end
 
+puts "Creation new reviews..."
 
+review_1 = Review.new(
+  rating: 8,
+  content: "Franchement pas mal, un peu sportif sur la fin"
+)
+
+review_1.trip = mountain_trip
+if review_1.save
+  puts "Review 1 successfully created"
+else
+  puts "Review 1 failed to be created"
+end
+
+review_2 = Review.new(
+  rating: 9,
+  content: "J'ai adoré et j'en redemande !"
+)
+
+review_2.trip = mountain_trip
+if review_2.save
+  puts "Review 2 successfully created"
+else
+  puts "Review 2 failed to be created"
+end
+
+review_3 = Review.new(
+  rating: 6,
+  content: "Pas mal, mais trop court !"
+)
+
+review_3.trip = sea_trip
+if review_3.save
+  puts "Review 3 successfully created"
+else
+  puts "Review 3 failed to be created"
+end

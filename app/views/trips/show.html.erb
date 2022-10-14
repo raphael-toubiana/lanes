@@ -1,14 +1,16 @@
 <%= render 'banner', trip: @trip %>
 <div class= "container mt-5">
-    <%= link_to "Retour", root_path, class:"link-secondary" %>
-    <%= render 'trip', trip: @trip %>
-    <%= link_to "Modifier", edit_trip_path(@trip), class: "btn btn-light" %>
-    <%= link_to "Supprimer", trip_path(@trip),
-      data: { turbo_method: :delete,
-              turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet itinéraire ?"
-              } ,
-      class: "btn btn-danger"
-    %>
+  <div class= "trip-presentation">
+      <%= link_to "Retour", root_path, class:"link-secondary" %>
+      <%= render 'trip', trip: @trip %>
+      <%= link_to "Modifier", edit_trip_path(@trip), class: "btn btn-light" %>
+      <%= link_to "Supprimer", trip_path(@trip),
+        data: { turbo_method: :delete,
+                turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet itinéraire ?"
+                } ,
+        class: "btn btn-danger"
+      %>
+  </div>
     <div class = "mt-5">
         <h2> Avis</h2>
         <%= render 'reviews', trip: @trip %>

@@ -3,7 +3,7 @@
     <h1><strong><%= trip.title.capitalize %></strong></h1>
     <p><%= trip.short_description %></p>
     <div class="btn-placeholder d-flex justify-content-center">
-      <a class="btn btn-primary" href="#">En savoir plus</a>
+      <%= link_to 'En savoir plus', trip_path(trip, anchor: "trip-presentation"), class: "btn btn-primary" %>
     </div>
   </div>
 </div>
