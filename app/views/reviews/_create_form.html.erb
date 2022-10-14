@@ -1,5 +1,11 @@
 <%= simple_form_for [trip, review] do |f| %>
-    <%= f.input :rating %>
-    <%= f.input :content %>
-    <%= f.submit %>
+ <div class= "row g-3">
+    <div class = "col-md-6">
+      <%= f.input :rating, label: 'Note', hint: "/10", placeholder: "8" %>
+    </div>
+    <div class = "col-md-6">
+      <%= f.input :content, label: "Critique", placeholder: "Une belle balade, un peu sportive sur la fin" %>
+    </div>
+  </div>
+    <%= f.submit class: "btn btn-primary" %>
 <% end %>
