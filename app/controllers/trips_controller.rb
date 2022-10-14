@@ -25,9 +25,11 @@ class TripsController < ApplicationController
     end
 
     def update
-        @trip.update(trip_params)
-
-        redirect_to trip_path(@trip)
+        if @trip.update(trip_params)
+          redirect_to trip_path(@trip)
+        else
+          render :edit, status: :unprocessable_entity
+        end
     end
 
     def destroy
