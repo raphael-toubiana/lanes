@@ -14,6 +14,7 @@ puts "Creating new trips..."
 
 sea_trip = Trip.create!(
                         title:                   "Promenade à la mer",
+                        short_description:       "Une superbe promenade le long du Lez",
                         difficulty:              3,
                         length:                  70,
                         starting_city_name:      "Montpellier",
@@ -32,6 +33,7 @@ end
 
 mountain_trip = Trip.create!(
     title:                   "Pic Saint Loup",
+    short_description:       "Itinéraire sportif à travers les Oliviers",
     difficulty:              7,
     length:                  100,
     starting_city_name:      "Montpellier",
