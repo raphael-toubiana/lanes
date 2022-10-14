@@ -1,1 +1,5 @@
-@import "bootstrap/scss/bootstrap"
+// External libraries
+@import "bootstrap/scss/bootstrap";
+
+// Internal libraries
+@import "/components/trip-banner";
