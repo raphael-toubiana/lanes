@@ -14,9 +14,11 @@ class TripsController < ApplicationController
 
     def create
         @trip = Trip.new(trip_params)
-        @trip.save
-
-        redirect_to trip_path(@trip)
+        if @trip.save
+          redirect_to trip_path(@trip)
+        else
+          render :new, status: :unprocessable_entity
+        end
     end
 
     def edit
@@ -24,13 +26,13 @@ class TripsController < ApplicationController
 
     def update
         @trip.update(trip_params)
-        
+
         redirect_to trip_path(@trip)
     end
-    
+
     def destroy
         @trip.destroy
-        
+
         redirect_to root_path, status: :see_other
     end
 
@@ -45,14 +47,15 @@ class TripsController < ApplicationController
     private
 
     def trip_params
-        params.require(:trip).permit(:title, 
+        params.require(:trip).permit(:title,
                                      :difficulty,
-                                     :length, 
+                                     :length,
                                      :starting_city_name,
                                      :starting_street_address,
                                      :ending_city_name,
                                      :ending_city_zipcode,
-                                     :ending_street_address
+                                     :ending_street_address,
+                                     :short_description
                                     )
 
     end
