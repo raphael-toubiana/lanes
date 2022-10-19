@@ -6,10 +6,16 @@
   <% end %>
   <div class="card-trip-infos">
     <div>
+      <div class='d-flex'>
+        <span class="badge badge-pill bg-dark">Difficulté : <%= trip.difficulty %>/10</span>
+        <p>|</p>
+        <span class="badge badge-pill bg-dark"><%= trip.length %> mn</span>
+      </div>
       <h2> <%= trip.title %> </h2>
-      <p> <%= trip.short_description %></p>
+      <h3> <%=trip.starting_city_name %> -> <%= trip.ending_city_name %></h3>
+      <p class='mt-2'> <%= trip.short_description %></p>
+      <%= link_to 'Voir', trip_path(trip), class: 'btn btn-primary mt-3' %>
     </div>
-    <h2 class="card-trip-pricing"> <%= trip.length %> mn </h2>
     <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
   </div>
 </div>
