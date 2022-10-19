@@ -1,9 +1,11 @@
 <%= render 'banner', trip: @trip %>
 <div class= "container mt-5">
-  <div class= "trip-presentation">
-      <%= link_to "Retour", root_path, class:"link-secondary" %>
-      <%= render 'trip', trip: @trip %>
-      <%= link_to "Modifier", edit_trip_path(@trip), class: "btn btn-light" %>
+  <%= link_to "Retour à tous les itinéraires", root_path, class:"link-secondary" %>
+  <div class= "trip-presentation mt-5">
+      <h2> Aperçu</h2>
+      <div class= "w-25">
+        <%= render 'trip', trip: @trip %>
+      </div>
       <%= link_to "Supprimer", trip_path(@trip),
         data: { turbo_method: :delete,
                 turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet itinéraire ?"

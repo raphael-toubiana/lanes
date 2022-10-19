@@ -1,9 +1,13 @@
-<div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.chapoutier.com/media/cache//Oenotourisme/b/a/balade_location_velo_1132x720.jpg);">
+<% if trip.cover_picture.attached? %>
+  <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= trip.cover_picture.url %>)">
+<% else %>
+  <div class="trip-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/ds3lr3hfq/image/upload/v1666186058/default_cover_picture_xzxuhg.jpg')">
+<% end %>
   <div class="container">
     <h1><strong><%= trip.title.capitalize %></strong></h1>
     <p><%= trip.short_description %></p>
     <div class="btn-placeholder d-flex justify-content-center">
-      <%= link_to 'En savoir plus', trip_path(trip, anchor: "trip-presentation"), class: "btn btn-primary" %>
+      <%= link_to "Modifier", edit_trip_path(@trip), class: "btn btn-light" %>
     </div>
   </div>
 </div>

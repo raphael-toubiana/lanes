@@ -51,6 +51,11 @@
                   label:       "Durée en minutes",
                   placeholder: "Ex: 60" %>
     </div>
+    <div class = "col-md-6">
+      <%= f.input :cover_picture,
+                  label:       "Image de couverture",
+                  as:       :file %>
+    </div>
   </div>
   <%= f.submit class:'btn btn-primary' %>
 <% end %>

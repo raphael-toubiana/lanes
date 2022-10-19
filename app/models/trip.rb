@@ -1,5 +1,6 @@
 class Trip < ApplicationRecord
     has_many :reviews, dependent: :destroy
+    has_one_attached :cover_picture
 
     validates :title,
               :starting_city_name,
@@ -8,6 +9,7 @@ class Trip < ApplicationRecord
               :ending_city_name,
               :ending_city_zipcode,
               :ending_street_address,
+              :cover_picture,
               presence: true
 
     validates :short_description, presence: true, length: {minimum: 20 }

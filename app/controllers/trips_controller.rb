@@ -57,7 +57,8 @@ class TripsController < ApplicationController
                                      :ending_city_name,
                                      :ending_city_zipcode,
                                      :ending_street_address,
-                                     :short_description
+                                     :short_description,
+                                     :cover_picture
                                     )
 
     end
