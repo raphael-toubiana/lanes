@@ -9,7 +9,6 @@ class Trip < ApplicationRecord
               :ending_city_name,
               :ending_city_zipcode,
               :ending_street_address,
-              :cover_picture,
               presence: true
 
     validates :short_description, presence: true, length: {minimum: 20 }

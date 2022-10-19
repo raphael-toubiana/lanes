@@ -2,4 +2,6 @@
 @import "bootstrap/scss/bootstrap";
 
 // Internal libraries
-@import "/components/trip-banner";
+@import "/components/trip/trip-banner";
+@import "/components/trip/card-trip";
+@import "/components/home/banner";

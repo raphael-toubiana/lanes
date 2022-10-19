@@ -1,15 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.guide-du-paysbasque.com/_bibli/articlesPage/228/images/noa-adventure9.jpg?v=ficheArticle&width=416&height=275&pixelRatio=2.6250);">
+  <div class="container">
+    <h1>Bienvenue sur <strong>Lanes</strong></h1>
+    <p>Partez à l'aventure en explorant nos <%=@trips.count%> itinéraires à vélo ou ajouter le votre.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
 <div class= "container mt-5">
-    <h1> Bienvenue sur Lanes ! </h1>
-    <p> Lanes vous permet de trouver les meilleurs itinéraires de vélo autour de chez vous.</p>
-    <p> Il y a <%= @trips.count %> itinéraires disponibles </p>
-    <ol>
-        <% @trips.each do |trip| %>
-           <li> <%= link_to trip.title, trip_path(trip.id), class:"link-secondary" %> </li>
-        <% end %>
-    </ol>
-    <div>
-        <%= link_to "Ajouter un itinéraire", new_trip_path, class: "btn btn-primary" %>
-        <%= link_to "Voir les itinéraires les plus tranquilles", easy_trips_path, class: "btn btn-secondary" %>
-        <%= link_to "Voir les itinéraires les plus sportifs", hard_trips_path, class: "btn btn-secondary" %>
-    </div>
+  <div class="row">
+    <% @trips.each do |trip| %>
+      <div class = "col-sm-4">
+        <%= render 'trip-card', trip: trip %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+      <%= link_to "Ajouter un itinéraire", new_trip_path, class: "btn btn-primary" %>
+      <%= link_to "Voir les itinéraires les plus tranquilles", easy_trips_path, class: "btn btn-secondary" %>
+      <%= link_to "Voir les itinéraires les plus sportifs", hard_trips_path, class: "btn btn-secondary" %>
+  </div>
 </div>

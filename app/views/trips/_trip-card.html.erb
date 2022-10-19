@@ -1,0 +1,15 @@
+<div class="card-trip mb-5">
+  <% if trip.cover_picture.attached? %>
+    <img src="<%= trip.cover_picture.url %>">
+  <% else %>
+    <img src="https://res.cloudinary.com/ds3lr3hfq/image/upload/v1666186058/default_cover_picture_xzxuhg.jpg">
+  <% end %>
+  <div class="card-trip-infos">
+    <div>
+      <h2> <%= trip.title %> </h2>
+      <p> <%= trip.short_description %></p>
+    </div>
+    <h2 class="card-trip-pricing"> <%= trip.length %> mn </h2>
+    <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+  </div>
+</div>
