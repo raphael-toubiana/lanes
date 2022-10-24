@@ -107,6 +107,7 @@ GEM
       railties (>= 3.2)
     erubi (1.11.0)
     ffi (1.15.5)
+    geocoder (1.8.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -257,6 +258,7 @@ DEPENDENCIES
   cloudinary
   debug
   dotenv-rails
+  geocoder
   importmap-rails
   jbuilder
   pg
