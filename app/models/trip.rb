@@ -8,4 +8,12 @@ class Trip < ApplicationRecord
 
     validates :short_description, presence: true, length: {minimum: 20 }
     validates :difficulty, :length, presence: true, numericality: { only_integer: true }
+
+    def origin_address
+      self.trip_locations.first.location.address
+    end
+
+    def target_address
+      self.trip_locations.last.location.address
+    end
 end
