@@ -52,12 +52,6 @@ class TripsController < ApplicationController
         params.require(:trip).permit(:title,
                                      :difficulty,
                                      :length,
-                                     :starting_city_name,
-                                     :starting_street_address,
-                                     :starting_city_zipcode,
-                                     :ending_city_name,
-                                     :ending_city_zipcode,
-                                     :ending_street_address,
                                      :short_description,
                                      :cover_picture
                                     )

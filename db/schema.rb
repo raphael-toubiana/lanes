@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_124944) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_27_073629) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_124944) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "content"
@@ -51,16 +59,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_124944) do
     t.index ["trip_id"], name: "index_reviews_on_trip_id"
   end
 
+  create_table "trip_locations", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.bigint "location_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_trip_locations_on_location_id"
+    t.index ["trip_id"], name: "index_trip_locations_on_trip_id"
+  end
+
   create_table "trips", force: :cascade do |t|
     t.string "title"
     t.integer "difficulty"
     t.integer "length"
-    t.string "starting_city_name"
-    t.string "starting_city_zipcode"
-    t.string "starting_street_address"
-    t.string "ending_city_name"
-    t.string "ending_city_zipcode"
-    t.string "ending_street_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "short_description"
@@ -69,4 +80,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_124944) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "reviews", "trips"
+  add_foreign_key "trip_locations", "locations"
+  add_foreign_key "trip_locations", "trips"
 end

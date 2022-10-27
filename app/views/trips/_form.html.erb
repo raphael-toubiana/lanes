@@ -1,44 +1,14 @@
 <%= simple_form_for(trip) do |f| %>
   <div class= "row g-3">
     <div class = "col-md-6">
-        <%= f.input :title,
-                    label:       "Titre",
-                    placeholder: "Ex: Promenade à la mer" %>
+      <%= f.input :title,
+                  label:       "Titre",
+                  placeholder: "Ex: Promenade à la mer" %>
     </div>
     <div class = "col-md-6">
       <%= f.input :short_description,
                   label:       "Description courte",
                   placeholder: "Ex: Une magnifique promenade le long du Lez" %>
-    </div>
-    <div class = "col-md-6">
-      <%= f.input :starting_city_name,
-                  label:       "Ville de départ",
-                  placeholder: "Ex: Montpellier" %>
-    </div>
-    <div class = "col-md-6">
-      <%= f.input :starting_city_zipcode,
-                  label:       "Code postal de la ville de départ",
-                  placeholder: "Ex: 34070" %>
-    </div>
-    <div class = "col-md-6">
-      <%= f.input :starting_street_address,
-                  label:       "Adresse du point de départ",
-                  placeholder: "Ex: 719 rue de las sorbes" %>
-    </div>
-    <div class = "col-md-6">
-      <%= f.input :ending_city_name,
-                  label:       "Ville d'arrivée",
-                  placeholder: "Ex: Palavas les flots" %>
-    </div>
-    <div class = "col-md-6">
-      <%= f.input :ending_city_zipcode,
-                  label:       "Code postal de la ville d'arrivée",
-                  placeholder: "Ex: 34250" %>
-    </div>
-    <div class = "col-md-6">
-      <%= f.input :ending_street_address,
-                  label:       "Adresse du point d'arrivée",
-                  placeholder: "37 Bd Sarrail" %>
     </div>
     <div class = "col-md-6">
       <%= f.input :difficulty,
@@ -54,7 +24,7 @@
     <div class = "col-md-6">
       <%= f.input :cover_picture,
                   label:       "Image de couverture",
-                  as:       :file %>
+                  as:          :file %>
     </div>
   </div>
   <%= f.submit class:'btn btn-primary' %>
