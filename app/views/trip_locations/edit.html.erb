@@ -1,0 +1,14 @@
+<div class= "container mt-5">
+  <% if @trip_location.starting_location == true %>
+    <h1>Editer le point de départ</h1>
+  <% elsif @trip_location.target_location == true %>
+    <h1>Editer le point d'arrivée</h1>
+  <% end %>
+    <%= link_to "Retour",trip_path(@trip_location.trip), class: "link-secondary"%>
+    <div class= "mt-4 bg-light p-5 rounded ">
+      <%= render "edit_form", trip_location: @trip_location, location: @trip_location.location %>
+    </div>
+</div>
+
+
+

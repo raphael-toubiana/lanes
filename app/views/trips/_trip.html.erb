@@ -14,9 +14,9 @@
       <div class="card-body">
         <p> <strong> Départ: </strong> <%= trip.display_origin_address %></p>
         <% if trip.origin_address.nil? %>
-          <%= link_to 'Ajouter', new_trip_trip_location_path(trip), class: "btn btn-primary"  %>
+          <%= link_to 'Ajouter', new_trip_trip_location_path(trip, starting_location: true), class: "btn btn-primary"  %>
         <% else %>
-          <%= link_to 'Modifier', edit_trip_location_path(trip), class: "btn btn-primary" %>
+          <%= link_to 'Modifier', edit_trip_location_path(trip.trip_locations.find_by(starting_location: true)), class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
@@ -24,9 +24,9 @@
       <div class="card-body">
         <p> <strong> Arrivée: </strong> <%= trip.display_target_address %></p>
         <% if trip.target_address.nil? %>
-          <%= link_to 'Ajouter', new_trip_trip_location_path(trip), class: "btn btn-primary"  %>
+          <%= link_to 'Ajouter', new_trip_trip_location_path(trip, target_location: true), class: "btn btn-primary"  %>
         <% else %>
-          <%= link_to 'Modifier', edit_trip_location_path(trip), class: "btn btn-primary" %>
+          <%= link_to 'Modifier', edit_trip_location_path(trip.trip_locations.find_by(target_location: true)), class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
