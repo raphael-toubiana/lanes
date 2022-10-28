@@ -104,28 +104,28 @@ end
 
 puts "Creating new trip_locations"
 
-sea_trip_origin_location = TripLocation.new(trip_id: sea_trip.id, location_id: location_1.id)
+sea_trip_origin_location = TripLocation.new(trip_id: sea_trip.id, location_id: location_1.id, starting_location: true)
 if sea_trip_origin_location.save
   puts "Sea trip origin location successfully created ✅"
 else
   puts "Sea trip origin location failed to be created ❌"
 end
 
-sea_trip_target_location = TripLocation.new(trip_id: sea_trip.id, location_id: location_2.id)
+sea_trip_target_location = TripLocation.new(trip_id: sea_trip.id, location_id: location_2.id, target_location: true)
 if sea_trip_target_location.save
   puts "Sea trip target location successfully created ✅"
 else
   puts "Sea trip target location failed to be created ❌"
 end
 
-mountain_trip_origin_location = TripLocation.new(trip_id: mountain_trip.id, location_id: location_1.id)
+mountain_trip_origin_location = TripLocation.new(trip_id: mountain_trip.id, location_id: location_1.id, starting_location: true)
 if mountain_trip_origin_location.save
   puts "Moutain trip origin location successfully created ✅"
 else
   puts "Moutain trip origin location failed to be created ❌"
 end
 
-mountain_trip_target_location = TripLocation.new(trip_id: mountain_trip.id, location_id: location_3.id)
+mountain_trip_target_location = TripLocation.new(trip_id: mountain_trip.id, location_id: location_3.id, target_location: true)
 if mountain_trip_target_location.save
   puts "Moutain trip target location successfully created ✅"
 else
