@@ -1,0 +1,10 @@
+<div class= "container mt-5">
+    <h1>Ajouter une adresse</h1>
+    <%= link_to "Retour",trip_path(@trip), class: "link-secondary"%>
+    <div class= "mt-4 bg-light p-5 rounded ">
+      <%= render "create_form", trip: @trip, trip_location: @trip_location, location: @location %>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,16 @@
+<%= simple_form_for [trip, trip_location] do |f| %>
+ <div class= "row g-3">
+    <%= simple_fields_for(location) do |l| %>
+      <div class = "col-md-12">
+        <%= l.input :address %>
+      </div>
+    <% end %>
+    <div class = "col-md-6">
+      <%= f.input :starting_location %>
+    </div>
+    <div class = "col-md-6">
+      <%= f.input :target_location %>
+    </div>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

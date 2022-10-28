@@ -12,12 +12,22 @@
     </div>
     <div class="card mb-3">
       <div class="card-body">
-        <p> <strong> Départ: </strong> <%= trip.origin_address%></p>
+        <p> <strong> Départ: </strong> <%= trip.display_origin_address %></p>
+        <% if trip.origin_address.nil? %>
+          <%= link_to 'Ajouter', new_trip_trip_location_path(trip), class: "btn btn-primary"  %>
+        <% else %>
+          <%= link_to 'Modifier', edit_trip_location_path(trip), class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
     <div class="card mb-3">
       <div class="card-body">
-        <p> <strong> Arrivée: </strong> <%= trip.target_address%></p>
+        <p> <strong> Arrivée: </strong> <%= trip.display_target_address %></p>
+        <% if trip.target_address.nil? %>
+          <%= link_to 'Ajouter', new_trip_trip_location_path(trip), class: "btn btn-primary"  %>
+        <% else %>
+          <%= link_to 'Modifier', edit_trip_location_path(trip), class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
   </div>
