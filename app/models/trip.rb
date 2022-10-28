@@ -32,4 +32,20 @@ class Trip < ApplicationRecord
       "Veuillez ajouter une adresse d'arrivée"
     end
   end
+
+  def all_trip_locations
+    TripLocation.where(trip_id: self.id)
+  end
+
+  def all_locations
+    locations = []
+    all_trip_locations.each do |trip_location|
+      locations << trip_location.location
+    end
+  locations
+  end
+
+  def is_missing_origin_or_target_address
+    self.origin_address.nil? || self.target_address.nil?
+  end
 end

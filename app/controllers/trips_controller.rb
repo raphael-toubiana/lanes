@@ -6,6 +6,12 @@ class TripsController < ApplicationController
     end
 
     def show
+      @markers = @trip.all_locations.map do |location|
+        {
+          lat: location.latitude,
+          lng: location.longitude
+        }
+      end
     end
 
     def new
